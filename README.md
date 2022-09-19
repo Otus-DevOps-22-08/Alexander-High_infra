@@ -41,7 +41,7 @@ appuser@someinternalhost:~$ hostname
 someinternalhost
 
 Перед установкой останавливаем bastion-host. Добавляем ему 1,5Гб ОЗУ и увеличиваем долю vCPU до 20% чтобы снизить врем обработки дальнейших команд с 40 минут до 10 сек
-
+Добавляем недостающую > в набор команд скрипта и собираем файл со скриптом на ВМ bastion-host
 appuser@bastion:~$ sudo pritunl setup-key
 8af6324675b34d41a407fcae651977c9
 
