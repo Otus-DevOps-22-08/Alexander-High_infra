@@ -90,5 +90,5 @@ yc compute instance create \
 
   Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file.
 
-  testapp_IP = 51.250.69.197
+  testapp_IP = 51.250.88.57
   testapp_port = 9292
