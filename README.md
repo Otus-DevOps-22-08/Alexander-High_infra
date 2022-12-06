@@ -74,3 +74,21 @@ someinternalhost_IP = 10.129.0.29
 
 Копируем с bastion-host файл скрипта утилитой scp
 scp appuser@51.250.25.127:/home/appuser/setupvpn.sh ~/Alexander-High_infra
+
+cloud-testapp homework
+
+Указываем в формате YA CLI основные параметры для создания WM:
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --core-fraction=20 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --metadata serial-port-enable=0 \
+  --metadata-from-file user-data=/home/alex/Alexander-High_infra/metadata.yaml
+
+  Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file.
+
+  testapp_IP = 51.250.69.197
+  testapp_port = 9292
