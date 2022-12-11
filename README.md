@@ -1,7 +1,7 @@
 # Alexander-High_infra
 Alexander-High Infra repository
 
-Bastion homework
+#Bastion homework
 Разворачиваем первую ВМ (bastion host)и подключаемся с перенаправлением агента ssh:
 
 ssh -i ~/.ssh/appuser -A appuser@51.250.25.127
@@ -75,7 +75,7 @@ someinternalhost_IP = 10.129.0.29
 Копируем с bastion-host файл скрипта утилитой scp
 scp appuser@51.250.25.127:/home/appuser/setupvpn.sh ~/Alexander-High_infra
 
-cloud-testapp homework
+#cloud-testapp homework
 
 Указываем в формате YA CLI основные параметры для создания WM:
 yc compute instance create \
@@ -88,7 +88,7 @@ yc compute instance create \
   --metadata serial-port-enable=0 \
   --metadata-from-file user-data=/home/alex/Alexander-High_infra/metadata.yaml
 
-  Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file.
+  Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file. в этом файле передаем содержимое всех скриптов.
 
-  testapp_IP = 51.250.88.57
+  testapp_IP = 51.250.91.79
   testapp_port = 9292
