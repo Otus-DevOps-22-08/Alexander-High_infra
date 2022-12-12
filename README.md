@@ -77,6 +77,9 @@ scp appuser@51.250.25.127:/home/appuser/setupvpn.sh ~/Alexander-High_infra
 
 #cloud-testapp homework
 
+testapp_IP = 84.201.128.103
+testapp_port = 9292
+
 Указываем в формате YA CLI основные параметры для создания WM:
 yc compute instance create \
   --name reddit-app \
@@ -89,6 +92,3 @@ yc compute instance create \
   --metadata-from-file user-data=/home/alex/Alexander-High_infra/metadata.yaml
 
   Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file. в этом файле передаем содержимое всех скриптов.
-
-  testapp_IP = 62.84.112.132
-  testapp_port = 9292
