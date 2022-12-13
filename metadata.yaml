@@ -7,11 +7,10 @@ users:
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKLW92Qwr/NTQXiuncFBTW2qSm9C/gaZC0Qk+9/CWu7tpm+XeSBIb7C33jDeGEKCmH1V931grEAa2XeJ5hOxpoAR4oWfZrKbMlDVZ8MpC95LnuY7sD1FO2LqwDc+LnAd0OHs/dZ0AYRaOnoBQwIzKpxBD8ICoIzROsVRM6p2S3s9JFi97nCUO9pzne0V4J52vSsZVcqL6M8ef9YKktnT6S/j8gV0jN8GmhTV+KE7JHM4bMXt8K4YF9yQqLBX089kNG0/bS7b4pmVRjAnfMQIoY8FKCsxYVZx2R6uNmgaTkKWn7+J+GYPSfLaPPoMRLDOL9DL7Nxy+EhoVq0qQF1GMh ubuntu
 runcmd:
+- sudo apt install apt-transport-https ca-certificates curl software-properties-common
 - sudo apt update -y
 - sudo apt upgrade -y
 - sudo apt install apt-transport-https ca-certificates
-- sudo apt update -y
-- sudo apt install apt-transport-https ca-certificates curl software-properties-common
 - sudo apt update -y
 - sudo apt install gnupg
 - sudo apt update -y
