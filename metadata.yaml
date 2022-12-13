@@ -11,6 +11,8 @@ runcmd:
 - sudo apt upgrade -y
 - sudo apt install apt-transport-https ca-certificates
 - sudo apt update -y
+- sudo apt install apt-transport-https ca-certificates curl software-properties-common
+- sudo apt update -y
 - sudo apt install gnupg
 - sudo apt update -y
 - wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
