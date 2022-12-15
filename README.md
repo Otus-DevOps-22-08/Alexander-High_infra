@@ -77,7 +77,7 @@ scp appuser@51.250.25.127:/home/appuser/setupvpn.sh ~/Alexander-High_infra
 
 #cloud-testapp homework
 
-testapp_IP = 130.193.37.87
+testapp_IP = 51.250.11.16
 testapp_port = 9292
 
 Указываем в формате YA CLI основные параметры для создания WM:
