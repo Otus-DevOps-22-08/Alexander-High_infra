@@ -92,3 +92,12 @@ yc compute instance create \
   --metadata-from-file user-data=/home/alex/Alexander-High_infra/metadata.yaml
 
   Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file. в этом файле передаем содержимое всех скриптов.
+
+#packer-base homework
+
+5. Подготовка базового образа VM при помощи Packer.
+Созданы файлы ubuntu16.json immutable.json и variables.json
+В файле variables.json прописаны оснвые переменные билдера.
+В файле immutable.json происходит вызов виртуальной магины YC, после чего на нее устанавливаются mongodb, ruby и приложение. И из этого создется образ.
+Запуск на исполнение производится консольной командой:
+packer build -var-file=variables.json immutable.json
