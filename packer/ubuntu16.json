@@ -3,13 +3,13 @@
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "/home/alex/secret/key.json",
-            "folder_id": "b1gfrisp50asp8n61dsg",
-            "source_image_family": "ubuntu-1604-lts",
-            "image_name": "reddit-base-{{timestamp}}",
-            "image_family": "reddit-base",
-            "ssh_username": "ubuntu",
-            "platform_id": "standard-v1",
+            "service_account_key_file":  "{{user `yc_service_account_key_file`}}",
+            "folder_id": "{{user `yc_folder_id`}}",
+            "source_image_family": "{{user `yc_source_image_family`}}",
+            "image_name": "{{user `yc_image_name`}}",
+            "image_family": "{{user `yc_image_family`}}",
+            "ssh_username": "{{user `yc_ssh_username`}}",
+            "platform_id": "{{user `yc_platform_id`}}",
             "use_ipv4_nat": "true"
         }
     ],
