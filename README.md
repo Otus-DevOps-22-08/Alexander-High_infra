@@ -1,7 +1,7 @@
 # Alexander-High_infra
 Alexander-High Infra repository
 
-Bastion homework
+#Bastion homework
 Разворачиваем первую ВМ (bastion host)и подключаемся с перенаправлением агента ssh:
 
 ssh -i ~/.ssh/appuser -A appuser@51.250.25.127
@@ -74,3 +74,30 @@ someinternalhost_IP = 10.129.0.29
 
 Копируем с bastion-host файл скрипта утилитой scp
 scp appuser@51.250.25.127:/home/appuser/setupvpn.sh ~/Alexander-High_infra
+
+#cloud-testapp homework
+
+testapp_IP = 51.250.11.16
+testapp_port = 9292
+
+Указываем в формате YA CLI основные параметры для создания WM:
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --core-fraction=20 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --metadata serial-port-enable=0 \
+  --metadata-from-file user-data=/home/alex/Alexander-High_infra/metadata.yaml
+
+  Для развертывания ПО и создания ssh подключения используем вызов внешнего файла из metadata-from-file. в этом файле передаем содержимое всех скриптов.
+
+#packer-base homework
+
+5. Подготовка базового образа VM при помощи Packer.
+Созданы файлы ubuntu16.json immutable.json и variables.json
+В файле variables.json прописаны оснвые переменные билдера.
+В файле immutable.json происходит вызов виртуальной магины YC, после чего на нее устанавливаются mongodb, ruby и приложение. И из этого создется образ.
+Запуск на исполнение производится консольной командой:
+packer build -var-file=variables.json immutable.json
