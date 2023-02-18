@@ -1,0 +1,8 @@
+cloud_id                 = "b1g05l8ud8qk"
+folder_id                = "b1gfr8n61dsg"
+image_id                 = "fd8mnhce8jtin"
+public_key_path          = "/appuser.pub"
+private_key_path         = "/appuser"
+subnet_id                = "e9b042o29j6f"
+service_account_key_file = "terraform_key.json"
+count_num                = 2
