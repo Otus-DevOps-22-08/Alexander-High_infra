@@ -31,3 +31,11 @@ variable "count_num" {
   description = "count of VM"
   default     = "1"
 }
+variable "app_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable "db_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}

@@ -1,0 +1,9 @@
+{
+    "yc_service_account_key_file": "/home/alex/secret/key.json",
+    "yc_folder_id": "b1gfrisp50asp8n61dsg",
+    "yc_source_image_family": "ubuntu-1604-lts",
+    "yc_image_name": "reddit-app-{{timestamp}}",
+    "yc_image_family": "reddit-base",
+    "yc_ssh_username": "ubuntu",
+    "yc_platform_id": "standard-v1"
+}
