@@ -8,3 +8,7 @@ variable app_disk_image {
 variable subnet_id {
 description = "Subnets for modules"
 }
+variable "count_num" {
+  description = "count of VM"
+  default     = "1"
+}

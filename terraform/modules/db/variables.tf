@@ -10,3 +10,7 @@ variable "db_disk_image" {
 variable "subnet_id" {
   description = "subnet_id"
 }
+variable "count_num" {
+  description = "count of VM"
+  default     = "1"
+}
