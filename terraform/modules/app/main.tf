@@ -1,3 +1,10 @@
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+}
 resource "yandex_compute_instance" "app" {
   count = var.count_num
   name  = "reddit-app-${count.index}"
@@ -19,8 +26,18 @@ resource "yandex_compute_instance" "app" {
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.app-subnet.id
+    subnet_id = var.subnet_id
     nat = true
   }
-
+  metadata = {
+  ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
+  connection {
+    type  = "ssh"
+    host  = self.network_interface.0.nat_ip_address
+    user  = "ubuntu"
+    agent = false
+    # путь до приватного ключа
+    private_key = file(var.private_key_path)
+    }
+}
